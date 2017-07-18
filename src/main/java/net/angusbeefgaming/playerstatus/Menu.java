@@ -52,7 +52,11 @@ public class Menu implements CommandExecutor {
     	return nameItem(new ItemStack(item), name);
     }
     
-    // Here I am writing a couple methods just to check for permissions
+    /* Here is where I write a couple of methods to quickly grab if the player we are
+    Talking about, has certain permissions
+    
+    Such as Essentials.fly
+   */
     
     private boolean hasFly(Player player) {
         if(player.hasPermission("essentials.fly")) {
