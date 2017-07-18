@@ -30,12 +30,14 @@ public class Menu implements CommandExecutor {
         ItemStack ITEM3 = nameItem(Material.GOLD_ORE, ChatColor.AQUA + "is OP: " + target.isOp());
         ItemStack ITEM4 = nameItem(Material.LAPIS_ORE, ChatColor.AQUA + "Has Fly: " + hasFly(target));
         ItemStack ITEM5 = nameItem(Material.REDSTONE_ORE, ChatColor.AQUA + "Gamemode: " + target.getGameMode());
+        ItemStack ITEM6 = nameItem(Material.DIAMOND_ORE, ChatColor.AQUA + "IP Address: " + target.getAddress());
         // Then I set them in the inv
         inv.setItem(10, ITEM1);
         inv.setItem(12, ITEM2);
         inv.setItem(14, ITEM3);
         inv.setItem(16, ITEM4);
         inv.setItem(28, ITEM5);
+        inv.setItem(30, ITEM6);
         // And then Finnaly, I am going to open the Inv for the player
         player.openInventory(inv);
         // And Of course, return true!
