@@ -1,0 +1,7 @@
+name: PlayerStatus
+version: 1.0
+author: TheBeefSteak
+main: net.angusbeefgaming.playerstatus.PS
+commands:
+  player:
+    description: Lookup player information
