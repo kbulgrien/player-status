@@ -4,7 +4,7 @@ package net.angusbeefgaming.playerstatus;
  * onClick Detector
  * Written by Atticus Zambrana
  * 
- * Main file that calls code when the user clickes on the inventory
+ * Main file that calls code when the user clicks on the inventory
  */
 
 import org.bukkit.event.Listener;
@@ -17,11 +17,12 @@ import org.bukkit.*;
 public class onClick implements Listener {
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
+        Player player = (Player) event.getWhoClicked();
         Inventory inv = event.getInventory();
-        if (!inv.getTitle().equals(ChatColor.BLUE + "WHOIS MENU")) {
+        if(! player.getOpenInventory().getTitle().equals(ChatColor.BLUE + "WHOIS MENU")) {
             return;
         }
-        if (!(event.getWhoClicked() instanceof Player)) {
+        if(!(event.getWhoClicked() instanceof Player)) {
             return;
         }
         

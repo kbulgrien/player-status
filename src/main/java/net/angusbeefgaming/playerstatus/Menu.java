@@ -16,15 +16,15 @@ public class Menu implements CommandExecutor {
             sender.sendMessage("Missing Permission Node: playerstatus.open");
             return false;
         }
-        if(!(sender instanceof Player)) { // Then Checks if the player is in the game
-            sender.sendMessage("You Must run this command in-game!"); 
+        if (! (sender instanceof Player ) ) { // Then check if the player is in the game
+            sender.sendMessage("You must run this command in-game!");
             return false;
         }
         Player player = (Player) sender; // Cast Player to Sender
         Player target = Bukkit.getServer().getPlayer(args[0]); 
         Inventory inv = Bukkit.createInventory(null, 36, ChatColor.BLUE + "WHOIS MENU");
         
-        // Here I will place all the items in the inventory
+        // Place all the items in the inventory
         ItemStack ITEM1 = nameItem(Material.COAL_ORE, ChatColor.AQUA + "Nick: " + target.getDisplayName());
         ItemStack ITEM2 = nameItem(Material.IRON_ORE, ChatColor.AQUA + "Health: " + target.getHealth());
         ItemStack ITEM3 = nameItem(Material.GOLD_ORE, ChatColor.AQUA + "is OP: " + target.isOp());
@@ -32,7 +32,7 @@ public class Menu implements CommandExecutor {
         ItemStack ITEM5 = nameItem(Material.REDSTONE_ORE, ChatColor.AQUA + "Gamemode: " + target.getGameMode());
         ItemStack ITEM6 = nameItem(Material.DIAMOND_ORE, ChatColor.AQUA + "IP Address: " + target.getAddress());
         ItemStack ITEM7 = nameItem(Material.EMERALD_ORE, ChatColor.AQUA + "Hunger: " + target.getFoodLevel());
-        // Then I set them in the inv
+        // Then set them in the inventory
         inv.setItem(10, ITEM1);
         inv.setItem(12, ITEM2);
         inv.setItem(14, ITEM3);
@@ -40,9 +40,9 @@ public class Menu implements CommandExecutor {
         inv.setItem(28, ITEM5);
         inv.setItem(30, ITEM6);
         inv.setItem(32, ITEM7);
-        // And then Finnaly, I am going to open the Inv for the player
+        // And then finally, open the inventory for the player
         player.openInventory(inv);
-        // And Of course, return true!
+        // Always return true!
         return true;
     }
     private ItemStack nameItem(ItemStack item, String name) {
@@ -56,11 +56,9 @@ public class Menu implements CommandExecutor {
     	return nameItem(new ItemStack(item), name);
     }
     
-    /* Here is where I write a couple of methods to quickly grab if the player we are
-    Talking about, has certain permissions
-    
-    Such as Essentials.fly
-   */
+    /* Write a couple of methods to quickly grab if the player we are
+     * talking about, has certain permissions such as Essentials.fly
+     */
     
     private boolean hasFly(Player player) {
         if(player.hasPermission("essentials.fly")) {
